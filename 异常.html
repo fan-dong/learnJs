@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>异常</title>
+</head>
+<body>
+<script type="text/javascript">
+     var add = function  (a,b) {
+         if(typeof a !== 'number' || typeof b !=='number'){
+            throw{
+                name:'TypeError',
+                message:'add needs numbers'
+            };
+         }
+         return a + b;
+     }
+
+     //throw 语句中断函数的执行。它应该抛出一个exception对象，该对象包含一个用来识别异常类型的name属性和一个描述性的message属性。你也可以添加其他的属性。
+
+     // 该exception对象将被传递到一个try语句的catch从句：
+
+     //构造一个try_it函数，以不正确的方式调用之前的add函数。
+
+     var try_it = function(){
+        try{
+            add('seven');
+        }catch(e){
+            document.writeln(e.name+':'+e.message);
+        }
+     }
+     try_it();
+</script>
+</body>
+</html>

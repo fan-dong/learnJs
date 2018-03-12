@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>扩充类型的功能</title>
+</head>
+<body>
+<script type="text/javascript">
+      // 我们可以通过Function.prototype增加方法来使得该方法对所有函数可用
+
+      Function.prototype.method = function (name,func) {
+          this.prototype[name] = func;
+          return this;
+      };
+      //通过给Function.prototype增加一个method方法，我们下次给对象增加方法的时候就不必键入prototype这几个字符，省掉一些麻烦。
+
+      //js没有专门的整数类型，但有时候确实只需要提取数字中的整数部分。js本身提供的取整方法有些丑陋。我们可以通过Number.prototype增加一个integer方法来改善它。它会根据数字的正负来判断是使用Math.ceiling还是Math.floor。
+
+    Number.method('integer',function(){
+        return Math[this<0?'ceil':'floor'](this);
+    })
+
+    document.writeln((-10/3).integer());
+
+
+    //js缺少一个移出字符串首尾空白的方法。这个小疏忽很容易弥补。
+
+    String.method('trim',function(){
+        return this.replace(/^\s+|\s+$/g,'');
+    });
+    document.writeln('"'+" neat ".trim()+ '"');
+
+
+     //符合条件时才增加方法
+
+     Function.prototype.method = function(name,func){
+        if(!this.prototype[name]){
+            this.prototype[name] = func;
+        }
+        return this;
+     };
+
+</script>
+</body>
+</html>

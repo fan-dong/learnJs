@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象的继承</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1.Object.getOwnPropertyNames();
+        // 返回一个数组，成员是对象本身的所有属性的键名，不包含继承的属性键名
+
+        // Object.keys(Date);  Object.keys方法只获取那些可以枚举的属性
+
+
+    // 2. Object.prototype.hasOwnPropperty();
+        // 该方法返回一个布尔值，用于判断某个属性定义在对象自身，还是定义在原型链上。
+
+    
+    // 3.In运算符   
+    // in运算符返回一个布尔值，表示一个对象是否具有某个属性。他不区分该属性是对象吱声的属性，还是继承的属性
+
+
+    // 4.for...in
+        // 获取对象的所有可枚举属性（不管是自身的还是继承的）。
+
+
+        var o1 ={p1:123};
+        var o2 = Object.create(o1,{
+            p2:{value:'abc',enumerable:true}
+        });
+        for(p in o2){console.info(p);}
+
+        
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>递归</title>
+</head>
+<body>
+    <script type="text/javascript">
+         //定义walk_the_Dom函数，它从某个指定的节点开始，按HTML源码中的顺序访问该树的每个节点。他会调用一个函数，并依次传递每个节点给它。walk_the_Dom 调用自身去处理每一个子节点。
+
+
+         // var walk_the_Dom = function walk (node,func) { func(node); node = node.firstChild; while(node){ walk(node,func); node = node.nextSibling; }递归。
+         // //javascript 当时没有对这种形式的递归做优化。
+
+         // var factorial = function factorial(i,a){ a = a || 1; if(i<2) { return a; }factorial(4));
+
+         var i =0;
+         while(i<100){
+            i++;
+            if(i%2 === 0) continue;
+            console.log("i当前为：" + i);
+         }
+    </script>
+</body>
+</html>

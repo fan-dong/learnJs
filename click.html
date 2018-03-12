@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com" onclick="aa();return false">click me</a>
+    <br>
+    <button title="内容一" onclick="bb(this); return false">1</button>
+    <button title="内容二" onclick="bb(this); return false">2</button>
+    <button title="内容三" onclick="bb(this);return false ">3</button>
+    <button title="内容四" onclick="bb(this);return false">4</button>
+    <div class="div">我是内容</div>
+    <br>
+    <br>
+    <br>
+    <a href="##" id="a2">点击我</a>
+    
+    <div id="div2">div2</div>
+</body>
+<script>
+    function aa(){
+        var a1 = document.getElementsByTagName("a")[0];
+        a1.style.color="red";
+        a1.style.background = "#000"
+    }
+
+
+    var odiv = document.getElementsByClassName("div");
+    var otitle = document.getElementsByTagName("button");
+    function bb(which){
+        var a = which.getAttribute('title');
+        odiv.innerHTML = a;
+        console.log(odiv.innerHTML);
+    }
+
+
+    var a2 = document.getElementById('a2');
+    var div2 = document.getElementById('div2');
+    a2.onclick= function(){
+        div2.innerHTML = "你好";
+        console.log(document.body.childNodes);  //body下所有子节点
+        console.log(document.body.nodeType);   //文本节点类型
+    }
+</script>
+</html>

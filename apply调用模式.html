@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>apply调用模式</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+
+    var Quo = function  (string) {
+        this.status = string;
+    };
+
+    //给Quo的所有实例提供一个名为get_status的公共方法。
+
+    Quo.prototype.get_stautus = function(){
+        return this.status;
+    };
+
+
+   // apply方法让我们构建一个参数数组传递给调用函数。它允许我们传递给调用函数。它允许我们选择this的值。apply方法接收两个参数，第一个是要绑定给this的值，第二个就是一个参数数组。
+
+    // 构造一个包含两个数字的数组，并将它们相加。
+
+    var array  = [3,4];
+    var sum = add.apply(null,array);
+
+    //构造一个包含status成员的对象。
+
+    var statusObject = {
+        status:'A-OK'
+    };
+
+
+    //statusObject  并没有继承自Que.prototype,但我们可以再statusObect上调用get_status方法，尽管statusObject并没有一个名为get_status的方法
+
+    var status = Quo.prototype.get_stautus.apply(statusObject);
+       //status值为“A-OK”
+</script>
+</body>
+</html>

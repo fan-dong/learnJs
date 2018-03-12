@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // some（）当数组中至少有一个元素调用来判定函数返回true，他返回true；并且当且仅当数值中的所有元素调用判断函数都返回false，他才返回false；
+        a =  [1,2,3,4];
+        var b = a.some(function(x){
+            return x%2 === 0;
+        })
+        a.some(isNaN);
+        alert(b);  //=>true：a含偶数值
+        alert(a.some(isNaN)); //  =>false:a不包含飞数值元素
+    </script>
+</body>
+</html>

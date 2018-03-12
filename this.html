@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // (function () {
+    //     console.log(this);
+    // })();
+
+    // (obj.foo = function () {
+    //     console.log(this);
+    // })();
+    // (false || function () {
+    //     console.log(this);
+    // })();
+    // (1, function () {
+    //     console.log(this);
+    // })();
+
+    var o = {
+        f1:function(){
+            console.log(this);
+            var that = this;
+            var f2 = function(){
+                console.log(that);
+            }();
+        }
+    }
+    console.log(o.f1());
+
+    var n=123;
+    var obj = {n:456};
+    function a(){
+        console.log(this.n);
+    }
+    console.log(a.call());
+    console.log(a.call(null));
+    console.log(a.call(undefined));
+    console.log(a.call(window));
+    console.log(a.call(obj));
+
+    function add(a,b){
+        return a +b;
+    };
+    add.call(this,1,2)
+
+    var a = ['a',,'b'];
+    function print(i){
+        console.log(i);
+    }
+    a.forEach(print);
+
+    Array.apply(null,a).forEach(print);
+
+    var aa = Array.prototype.slice.apply({0:1,length:2});
+    console.log(aa)
+
+    var d = new Date();
+    d.getTime();
+    var print = d.getTime.bind(d);
+    console.log(print());
+</script>
+
+</html>

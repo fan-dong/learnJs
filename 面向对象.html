@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>面向对象</title>
+</head>
+<body>
+<script type="text/javascript">
+    //1.创建object实例
+     var person = new Object();
+     person.name = "Lucy";
+     person.age = 29;
+     person.job ="software";
+     person.sayName = function(){
+        alert(this.name);
+     }
+     person.sayName();
+
+
+     //2.对象字面量语法
+     var person ={
+        name:"Lucy",
+        age:29,
+        job:"software",
+
+        sayName:function  () {
+            alert(this.name);
+        }
+     };
+
+     // 工厂模式
+     function creatPerson (name,age,job) {
+         var o = new Object();
+         o.name = name;
+         o.age = age;
+         o.job = job;
+         o.sayName = function(){
+            alert(this.name);
+         }
+         return o;
+     }
+
+     var person1 = creatPerson("Lucy",29,"software");
+     var person2 = creatPerson("Lili",27,"Doctor");
+
+     //构造函数模式
+     function Person(name,age,job){
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.sayName = function  () {
+            alert(this.name);
+        };
+     }
+     var person1 = new Person("lucy",29,"software");
+     var person2 = new Person('Lili,27,"Doctor');
+
+
+     //原型模式
+     function  Person1() {}
+        Person1.prototype.name = "Lucy";
+        Person1.prototype.age = 29;
+        Person1.prototype.job = "software";
+        Person1.prototype.sayName = function  () {
+            alert(this.name);
+        };
+         var person1 = new Person1();
+         var person2 = new Person1();
+
+
+    //更简单的原型语法
+     function Person () {}
+     Person.prototype = {
+        name:"Lucy",
+        age:29,
+        job:"software",
+        sayName:function  () {
+            alert(this.name);
+        }
+     };
+
+     var friend = new Person();
+     alert(friend instanceof Object);
+     alert(friend instanceof Person);
+     alert(friend.constructor == Person);
+     alert(friend.constructor == Object);
+
+     //组合使用构造函数模式和原型模式
+      function Person(name,age,job){
+        this.name = name;
+        this.age = age;
+        thsi.job = job;
+        this.firends = ["Shelby","Court"];
+      }
+      Person.prototype = {
+        constructor:Person,
+        sayName:function  () {
+            alert(this.name);
+        }
+      }
+      var person1 = new Person("Lucy",29,"software");
+      var person2 = new Person("Lili",27,"Doctor");
+      person1.friend.push('Van');
+
+      console.log(person1.friends);
+      console.log(person2.friends);
+      console.log(person1.friends === person2.friends);
+      console.log(person1.sayName === person2.sayName);
+
+      //稳妥构造函数模式
+      function Person (name,age,job) {
+          var o = new Object;
+          o.sayName = function  () {
+              alert(name);
+          }
+          return o;
+      }
+      var friend = Person("Lucy",29,"software");
+      friend.sayName();
+
+
+        //借用构造函数
+      function SuperType () {
+          this.colors = ["red","blue","green"];
+      }
+      function SubType () {
+          SuperType.call(this);
+      }
+
+      var instance1 = new SubType();
+      instance1.colors.push("black");
+      alert(instance1.colors)
+       var instance2 = new SubType();
+       alert(instance2.colors);
+
+       //传递参数
+       function SuperType () {
+           this.name = name;
+       }
+       function SubType () {
+           SuperType.call(this,"Lucy");
+
+           this.age = 29;
+       }
+
+       var instance = new  SubType();
+       alert(instance.name);
+       alert(instance.age);
+
+
+
+       //组合继承
+
+        function SuperType (name) {
+            this.name = name;
+            this.colors = ["red","blue","green"];
+        }
+        SuperType.prototype.sayName = function  () {
+            alert(this.name);
+        }
+        function SubType (name,age) {
+            SuperType.call(this,name);   //继承属性
+
+            this.age = age;
+        }
+        SubType.prototype = new SuperType();       //继承方法
+        SubType.prototype.sayAge = function  () {
+            alert(this.age);
+        }
+
+        var instance = new SubType("Lucy",29);
+        instance.colors.push("black");
+        alert(instance.colors);
+        instance.sayName();
+        instance.sayAge();
+
+        var instance2 = new SubType("LIli",30);
+        alert(instance2.colors);
+        instance2.sayName();
+        instance.sayAge();
+</script>
+</body>
+</html>

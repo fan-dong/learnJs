@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象</title>
+</head>
+<body>
+   
+</body>
+<script>
+    // 1.对象：对象是一个容器，封装了属性（property）和方法（method）。
+    
+    // 2.构造函数
+        var Ve = function(){
+            this.price = 1000;
+        };
+
+    // 3.new命令
+        // 3.1基本用法
+            // new命令的作用就是执行构造函数，返回一个实例对象。
+            var v = new Ve();
+            console.log(v.price);
+            //使用new命令时候，根据需要，构造函数也可以接受参数。
+            var Ve1 = function(p){
+                this.price = p;
+            };
+            var v1 = new Ve1(500);
+            // new 命令本身就可以执行构造函数，所以后面的构造函数可以带括号，也可以不带括号。
+
+        // 3.2  new命令的原理
+            // 使用new命令时，他后面的函数调用就不是正常的调用，而是一次执行下面的步骤
+            // a.创建一个空对象，作为将要返回的对象实例
+            // b.将这个空对象的原型,指向构造函数的prototype属性
+            // c.将这个空对象赋值给函数内部的this关键字
+            // d.开始执行构造函数内部的代码
+        // 3.3  new.target
+            // 函数内部可以使用new.target属性。如果当前函数是new命令调用，new.target指向当前函数，否则为undefined。
+            function f(){
+                console.log(new.target === f);
+            }
+            f();
+            new f();
+            // 使用这个属性，可以判断函数调用的时候，是否使用new命令
+            // function ff(){
+            //     if(!new.target){
+            //         throw new Error('请使用 new 命令调用！')
+            //     }
+            // }
+            // ff()
+        
+        
+        // 3.4  使用Object.create()创建对象
+
+        var person1 = {
+            name:'张三',
+            age:38,
+            greeting:function(){
+                console.log('Hi! I\'m' + this.name + '.');
+            }
+        };
+        var person2 = Object.create(person1);
+        console.log(person2.name);
+        console.log(person2.greeting());
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>构造器调用模式</title>
+</head>
+<body>
+<script type="text/javascript">
+    //创建一个名为Quo的构造函数。他构造一个带有status属性的对象。
+
+    var Quo = function  (string) {
+        this.status = string;
+    };
+
+    //给Quo的所有实例提供一个名为get_status的公共方法。
+
+    Quo.prototype.get_stautus = function(){
+        return this.status;
+    };
+
+    //构造一个Quo实例。
+
+    var myQuo = new Quo('confused');
+
+    document.writeln(myQuo.get_stautus());
+
+</script>
+</body>
+</html>

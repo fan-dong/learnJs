@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Date 类型</title>
+</head>
+<body>
+    <script type="text/javascript">
+          var t = new Date();
+          var a = t.toDateString();     //以特定于实现的格式显示星期几、月、日和年
+          console.log(a);
+          var b = t.toTimeString();     //以特定于实现的格式显示时、分、秒和时区
+          console.log(b);
+          var c = t.toLocaleString();   //以特定于地区的格式显示星期几、月、日和年
+          console.log(c);
+          var d = t.toLocaleDateString();  //以特定于实现的格式显示星期几、月、日和年
+          console.log(d);
+          var e = t.toLocaleTimeString();  //以特定于实现的格式显示时、分、秒
+          console.log(e);
+          var f = t.toUTCString();          //以特定于实现的格式完整的UTC日期
+          console.log(f);
+
+
+
+
+
+
+
+          var num = 99;
+            alert(num.toExponential(1));
+            alert(num.toPrecision(1));
+            alert(num.toPrecision(2));
+            alert(num.toPrecision(3));
+    </script>
+</body>
+</html>

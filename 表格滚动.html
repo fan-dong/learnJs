@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap-reboot.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
+<script src="iscroll.js"></script>
+</head>
+<body>
+<div id="con" class="container">
+<div id="2">
+<table class="table table-bordered scrolltable">
+<thead style="display:block;overflow-y: scroll;border-bottom:1px solid #eee;">
+<tr>
+<th>栏目一</th>
+<th>栏目二</th>
+<th>栏目三</th>
+<th>栏目一</th>
+<th>栏目二</th>
+<th>栏目三</th>
+</tr>
+</thead>
+<tbody style="display:block; max-height:200px;overflow-y: scroll;">
+<tr>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+</tr>
+<tr>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+</tr>
+<tr>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+</tr>
+<tr>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+</tr>
+<tr>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+</tr>
+<tr>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+</tr>
+<tr>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+</tr>
+<tr>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+<td>星期一</td>
+<td>星期二</td>
+<td>星期三</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+var _width=$('#2').width();
+$('#2 th:first-child').width(_width*0.1);
+$('#2 td:first-child').width(_width*0.1);
+$('#2 th:nth-child(2)').width(_width*0.3);
+$('#2 td:nth-child(2)').width(_width*0.3);
+$('#2 th:nth-child(3)').width(_width*0.3);
+$('#2 td:nth-child(3)').width(_width*0.3);
+$('#2 th:nth-child(4)').width(_width*0.1);
+$('#2 td:nth-child(4)').width(_width*0.1);
+$('#2 th:nth-child(5)').width(_width*0.1);
+$('#2 td:nth-child(5)').width(_width*0.1);
+$('#2 th:nth-child(6)').width(_width*0.2);
+$('#2 td:nth-child(6)').width(_width*0.2);
+})
+</script>
+</html>

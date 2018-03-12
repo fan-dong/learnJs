@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象编程</title>
+</head>
+<body>
+    
+</body>
+        <script>
+            function M1(){
+                this.hello = 'hello';
+            }
+            function M2(){
+                this.world ='world';
+            }
+            function S(){
+                M1.call(this);
+                M2.call(this);
+            }
+
+            S.prototype = Object.create(M1.prototype);
+            Object.assign(S.prototype,M2.prototype);
+
+            S.prototype.constructor = S;
+            var s = new S();
+            s.hello;
+            s.world;
+        </script>
+</html>

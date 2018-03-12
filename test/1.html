@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>美术馆一</title>
+</head>
+<body>
+    
+    <ul>
+        <li><a href="1.jpg" title="图片一" onclick="showPic(this);return false">第一张图片</a></li>
+        <li><a href="2.jpg" title="图片二" onclick="showPic(this);return false">第二张图片</a></li>
+        <li><a href="3.jpg" title="图片三" onclick="showPic(this);return false">第三张图片</a></li>
+        <li><a href="4.jpg" title="图片四" onclick="showPic(this);return false">第四张图片</a></li>
+    </ul>
+    <img id ="img" src="aa.jpg" alt="" style="width:400px;height:300px">
+    <div id="tips">choose an image</div>
+</body>
+    <script>
+        function showPic(which){
+            var a = document.getElementsByTagName('a'),
+                img = document.getElementById('img'),
+                tips = document.getElementById('tips'),
+                href = which.getAttribute('href'),
+                title = which.getAttribute('title');
+
+            img.setAttribute('src',href);
+            img.setAttribute('title',title)
+            tips.firstChild.nodeValue = title;
+        }
+
+       
+    </script>
+</html>

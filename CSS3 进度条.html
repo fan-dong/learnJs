@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+    .progress{
+        width:490px;
+        height: 20px;
+        padding:5px;
+        background:#ccc;
+        border-radius:10px;
+        box-shadow:2px 2px 2px #999 inset;
+    }
+    .bar-out{
+        width:0;
+        height: 100%;
+        background:blue;
+        border-radius:10px;
+        transition:width 2s;
+        -webkit-transition:width 2s ease;
+        -moz-transition:width 2s ease;
+        -webkit-animation: progressbar 7s infinite;
+        animation: progressbar 7s infinite;
+    }
+    .bar{
+        height: 100%;
+        width:100%;
+        border-radius:10px;
+    }
+
+    .bar-out-2{
+        width:0;
+        height: 100%;
+        border-radius:10px;
+        transition:width 2s;
+        -webkit-transition:width 2s ease;
+        -moz-transition:width 2s ease;
+        -webkit-animation: progressbar 7s infinite;
+        animation: progressbar 7s infinite;
+    }
+    .bar-stripes{
+        height: 100%;
+        background:#e74c3c;
+        width:0;
+        border-radius:8px;
+        background-image:linear-gradient(-45deg,rgba(255,255,255,.2) 25%,transparent 25%, transparent 50%,rgba(255,255,255,.2) 50%,rgba(255,255,255,.2) 75%,transparent 75%,transparent);
+        -webkit-transition: width .8s ease;
+        -moz-transition:width .8s ease;
+        transition:width .8s ease;
+        -webkit-animation:progressbar 7s infinite;
+        animation:progressbar 7s infinite;
+    }
+
+    @-webkit-keyframes progressbar{
+        from{
+            width:0;
+        }
+        to{
+            width:100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="progress">
+        <div class="bar-out">
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <div class="progress">
+        <div class="bar-out-2">
+            <div class="bar-stripes"></div>
+        </div>
+    </div>
+</body>
+</html>

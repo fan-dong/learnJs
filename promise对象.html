@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1.什么是promise对象
+        // 首先，他是一个对象，也就是说与其他的js对象用法，没有什么两样；其次它起到代理作用，充当异步操作与回调函数之间的中介。它使得异步操作具备同步操作的接口，使得程序具备正常的同步运行的流程，回调函数不必再一层一层嵌套。
+
+    console.log(Promise);
+
+    // po.then(
+    //     console.log,
+    //     console.error
+    // );
+    console.log(Promise.then)
+
+
+    var preloadImage = function(path){
+        return new Promise(function(resolve,reject){
+            var image = new Image();
+            image.onload = resolve;
+            image.onerror = reject;
+            image.src = path;
+        })
+    }
+</script>
+</html>

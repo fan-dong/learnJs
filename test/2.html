@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>美术馆二</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li><a href="1.jpg" title="图片一">图片一</a></li>
+        <li><a href="2.jpg" title="图片二">图片二</a></li>
+        <li><a href="3.jpg" title="图片三">图片三</a></li>
+        <li><a href="4.jpg" title="图片四">图片四</a></li>
+    </ul>
+    <img id ="img" src="aa.jpg" alt="" style="width:400px;height:300px">
+    <div id="tips">choose an image</div>
+</body>
+<script>
+    window.onload = show;
+    function show(){
+        if(!document.getElementById ||!document.getElementsByTagName) return false; //检测浏览器是否支持
+        if(!document.getElementById('ul1')) return false;   //如果找不到元素
+
+        var oUl   = document.getElementById("ul1"),
+            links = oUl.getElementsByTagName('a');
+        
+        for(var i =0;i<links.length;i++){
+            links[i].onclick=function(){
+                showPic(this);
+                return false;
+                links[i].onclick = links[i].onkeypress;  //  使用键盘预览
+            }
+            
+        }   
+    }
+
+
+    function showPic(which){
+        var a = document.getElementsByTagName('a'),
+            img = document.getElementById('img'),
+            tips = document.getElementById('tips');
+        //     href = which.getAttribute('href'),
+        //     title = which.getAttribute('title');
+           
+
+        // img.setAttribute('src',href);
+        // img.setAttribute('title',title)
+        // tips.firstChild.nodeValue = title;
+
+        var  href = which.href,
+             title = which.title;
+
+        img.src =href;
+        img.title = title;
+        tips.firstChild.nodeValue = title;
+    }
+
+    var arr =[11,2,3,'hgha','jqi','ujiqewiu'];
+    for(key in arr)
+    console.log(key);
+</script>
+</html>
+

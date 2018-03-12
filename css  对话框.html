@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+    body{
+        padding:100px;
+    }
+.box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #c2c2c2;
+    border-radius:10px;
+    background-color: rgba(225, 225, 225, .6);
+}
+.box:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    right: 100px;
+    top: 200px;
+    border-right:10px solid #c2c2c2;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+/* .box:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    right: 200px;
+    top: 23px;
+    border-right: 7px solid rgba(225, 225, 225, .6);
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+} */
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+</body>
+</html>
